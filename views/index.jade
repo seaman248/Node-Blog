@@ -8,17 +8,8 @@ block content
 		.content
 			.rows
 				.col-md-10.col-md-offset-1
-					.well
-						.page-header 
-							h2 Lorem ipsum.
-						p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-							|Architecto delectus consectetur libero, officia hic ipsa 
-							|ab velit deserunt, sunt laboriosam inventore pariatur reiciendis 
-							|facilis vel sint aliquid consequuntur. Similique, eos.
-					.well
-						.page-header 
-							h2 Lorem ipsum.
-						p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-							|Architecto delectus consectetur libero, officia hic ipsa 
-							|ab velit deserunt, sunt laboriosam inventore pariatur reiciendis 
-							|facilis vel sint aliquid consequuntur. Similique, eos.
+					each post in postList
+						.well
+							.page-header 
+								h2 #{post.title}
+							p.lead #{post.postPrev}
