@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Seaman Blog' });
+  res.render('index', { 
+  	title: 'Seaman Blog', 
+  	jumbotron: true ,
+  	pages: ['blog', 'Portfolio', 'Contacts']
+  });
 });
 
 module.exports = router;
