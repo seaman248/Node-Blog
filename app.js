@@ -22,8 +22,9 @@ app.use(cookieParser());
 app.use(require('node-compass')({mode: 'expanded'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', index);
-app.use('/blog/:postId', post)
+app.use('/blog', post);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

@@ -1,8 +1,8 @@
 doctype html5
 html
 	head
-		title= title
-		link(rel='stylesheet', href='http://bootswatch.com/journal/bootstrap.min.css')
+		title Seaman Blog
+		link(rel='stylesheet', href='http://bootswatch.com/darkly/bootstrap.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src='/javascripts/index.js')
 	body
@@ -13,11 +13,15 @@ html
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-						a.navbar-brand(href='#') #{title}
+						a.navbar-brand(href='#') Seaman Blog
 				.navbar-collapse.collapse.navbar-inverse-collapse
 					ul.nav.navbar-nav
 						if pages
 							each page in pages
 								li
 									a(href = page.url) #{page.name}
+			if jumbotron
+				.jumbotron
+					h1 Seaman Blog
+					p Welcome to my blog!
 			block content
