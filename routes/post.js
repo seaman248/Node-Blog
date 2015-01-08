@@ -7,11 +7,10 @@ router.get('/:postId', function(req, res, next){
   	pages: [{name:'Blog', url: '/'},
   		{name: 'Portfolio', url: '/portfolio'},
   		{name: 'Contacts', url: '/contacts'}],
-  	postList: [
-  		{title: 'lorem ipsum.', postPrev: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, maxime!', href:'/blog/1'},
-  		{title: 'Lorem ipsum.', postPrev: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, maxime!', href:'/blog/2'},
-  		{title: 'Lorem ipsum.', postPrev: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, maxime!', href:'/blog/3'},
-  	]
+  	post: {
+  		header: 'Что-то там №'+req.params.postId,
+  		text: 'Something .md file Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate recusandae enim repudiandae, ipsa accusantium, eos, cum beatae dolor accusamus id est vitae quia necessitatibus sed veniam laudantium temporibus saepe quasi.'
+  	}
   });
 })
 
