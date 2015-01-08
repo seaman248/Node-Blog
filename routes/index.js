@@ -6,7 +6,9 @@ router.get('/', function(req, res) {
   res.render('index', { 
   	title: 'Seaman Blog', 
   	jumbotron: true ,
-  	pages: ['blog', 'Portfolio', 'Contacts']
+  	pages: [{name:'Blog', url: '/'},
+  		{name: 'Portfolio', url: '/portfolio'},
+  		{name: 'Contacts', url: '/contacts'}]
   });
 });
 

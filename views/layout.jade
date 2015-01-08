@@ -16,10 +16,8 @@ html
 						a.navbar-brand(href='#') #{title}
 				.navbar-collapse.collapse.navbar-inverse-collapse
 					ul.nav.navbar-nav
-						li
-							a(href='#') Blog
-						li
-							a(href='#') Portfolio
-						li
-							a(href='#') Contacts
+						if pages
+							each page in pages
+								li
+									a(href = page.url) #{page.name}
 			block content
