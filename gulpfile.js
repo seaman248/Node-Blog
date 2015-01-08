@@ -1,21 +1,22 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
-	coffee = require('gulp-coffee');
+	coffee = require('gulp-coffee'),
+	gutil = require('gulp-util');
 
 gulp.task('coffee', function(){
-	gulp.src('public/javascript/src/**/*.coffee')
-		.pipe(coffee())
-		.pipe(gulp.dest('public/javascript/'));
+	gulp.src('public/javascripts/src/**/*.coffee')
+		.pipe(coffee({bare: true}).on('error', gutil.log))
+		.pipe(gulp.dest('public/javascripts/'));
 });
 
 gulp.task('uglify', function(){
-	gulp.src('public/javascript/**/*js')
+	gulp.src('public/javascripts/**/*js')
 		.pipe(uglify)
-		.pipe(gulp.dest('public/javascript/'));
+		.pipe(gulp.dest('public/javascripts/'));
 });
 
 gulp.task('watch', function(){
-	gulp.watch('public/javascript/src/**/*.coffee', ['coffee']);
+	gulp.watch('public/javascripts/src/**/*.coffee', ['coffee']);
 })
 
 
