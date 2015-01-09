@@ -1,0 +1,4 @@
+var mongoose = require('mongoose');
+var schemas = require('./schemas');
+
+var Post = mongoose.model('Blog', schemas.postSchema)

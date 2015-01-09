@@ -1,6 +1,13 @@
 var  db = require('mongoose');
-var conf = require('../conf');
-
-
 
 var Schema = mongoose.Schema;
+
+module.exports.postSchema = newSchema({
+	title: String,
+	author: String,
+	mdLink: String,
+	date: {type: Date, default: Date.now},
+	tags: [String]
+});
+
+
