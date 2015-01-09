@@ -1,6 +1,8 @@
 doctype html5
 html
-	head
+	head 
+		if post
+			title #{title} | #{post.header}
 		title #{title}
 		link(rel='stylesheet', href='http://bootswatch.com/darkly/bootstrap.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
@@ -13,7 +15,7 @@ html
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-						a.navbar-brand(href='#') Seaman Blog
+						a.navbar-brand(href='/') Seaman Blog
 				.navbar-collapse.collapse.navbar-inverse-collapse
 					ul.nav.navbar-nav
 						if pages
