@@ -68,6 +68,6 @@ app.use(function(err, req, res, next) {
 });
 
 app.locals.title = locables.title;
-app.locals.pages = locables.pages;
+app.locals.navLinks = locables.navLinks;
 
 module.exports = app;

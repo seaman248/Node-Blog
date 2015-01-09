@@ -1,12 +1,26 @@
 var express = require('express');
 var router = express.Router();
+var md = require('node-markdown').Markdown;
+var fs = require('fs');
+var path = require('path');
+
+var postHeader = 'Что-то там №';
+var mdlink = 'README.markdown';
+
+
+var getPost = function(link){
+	var allPath = path.resolve(__dirname, '../public/md/');
+	return fs.readFileSync(allPath+'/'+link).toString();
+}
+	
+
 
 router.get('/:postId', function(req, res, next){
-	// console.log(req.params.postId); // postId
 	res.render('post', {
   	post: {
-  		header: 'Что-то там №'+req.params.postId,
-  		text: 'Something .md file Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate recusandae enim repudiandae, ipsa accusantium, eos, cum beatae dolor accusamus id est vitae quia necessitatibus sed veniam laudantium temporibus saepe quasi.'
+  		// Убрать req.params
+  		header: postHeader+req.params.postId,
+  		mdContent: md(getPost(mdlink))
   	}
   });
 })
