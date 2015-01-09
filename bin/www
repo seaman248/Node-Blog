@@ -7,12 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('myBlog:server');
 var http = require('http');
-
+var conf = require('../conf');
 /**
  * Get port from environment and store in Express.
  */
 
-var port = parseInt(process.env.PORT, 10) || 3000;
+var port = parseInt(process.env.PORT, 10) || conf.get('port');
 app.set('port', port);
 
 /**

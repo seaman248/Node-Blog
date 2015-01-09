@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var conf = require('./conf');
 var index = require('./routes/index');
 var post = require('./routes/post');
 var portfolio = require('./routes/portfolio');
@@ -60,5 +60,5 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
+app.locals.title = conf.get('locals:title');
 module.exports = app;
