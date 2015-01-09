@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 module.exports.postSchema = newSchema({
 	title: String,
+	description: String,
 	author: String,
 	mdLink: String,
 	date: {type: Date, default: Date.now},
