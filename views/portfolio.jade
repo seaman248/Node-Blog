@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	each item in projects
+		.well
+			h1 
+				a(href=item.href)=item.name
+			p.lead #{item.description}
