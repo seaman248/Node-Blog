@@ -18,8 +18,8 @@ html
 						a.navbar-brand(href='/') Seaman Blog
 				.navbar-collapse.collapse.navbar-inverse-collapse
 					ul.nav.navbar-nav
-						if pages
-							each page in pages
+						if navLinks
+							each page in navLinks
 								li
 									a(href = page.url) #{page.name}
 			if jumbotron

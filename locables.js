@@ -4,14 +4,14 @@ var conf = require('./conf');
 
 
 // Get navigation list from database
-var pages = [{name:'Blog', url: '/'},
+var navLinks = [{name:'Blog', url: '/'},
   		{name: 'Portfolio', url: '/portfolio'},
   		{name: 'Contacts', url: '/contacts'}];
 
 
 var locables = {
 	title: conf.get('locals:title'),
-	pages: pages
+	navLinks: navLinks
 };
 
 
