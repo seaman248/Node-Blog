@@ -1,9 +1,0 @@
-{
-	"port": 3000,
-	"host": "localhost",
-	"locals": {
-		"title": "Seaman Blog",
-		"description": "description data"
-	},
-	"database_port": 5756
-}
