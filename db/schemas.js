@@ -30,3 +30,15 @@ postSchema.virtual('tags.set').set(function(tagsStr){
 module.exports.postSchema = postSchema;
 
 
+/*
+db.posts.save({
+	title: 'Post1',
+	description: 'This is the post about nothing',
+	autor: 'Lorem ipsum',
+	mdLink: 'README.MD',
+	href: '/blog/1',
+	date: Date.now,
+	tags: ['tag1', 'tag2', 'tag3']
+})
+
+*/
