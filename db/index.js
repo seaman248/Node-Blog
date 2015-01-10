@@ -10,6 +10,10 @@ db.on('error', console.error.bind(console, 'connection error:'));
 var Post = models.Post;
 module.exports.Post = Post;
 
+/*
+	Example of insert operation with post
+*/
+
 // var post = new Post({
 // 	title: 'post7',
 // 	description: 'This is the post about nothing',
@@ -23,4 +27,13 @@ module.exports.Post = Post;
 // post.save(function(err, post){
 // 	if(err) console.log(err);
 // 	console.log(post.title);
+// })
+
+/*
+	Example of select operation of posts
+*/
+
+// Post.find(function(err, posts){
+// 	if(err) console.log(err);
+// 	console.log(posts);
 // })
