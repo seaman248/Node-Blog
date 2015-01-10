@@ -8,16 +8,13 @@ var Schema = mongoose.Schema;
 */
 
 var postSchema = new Schema({
-	title: {
-		type: String,
-
-	},
+	title: String,
 	description: String,
 	author: {name: String, login: String},
-	mdLink: String,
+	mdLink: String, // Link to .md file of this post
 	date: {type: Date, default: Date.now},
 	tags: [String]
-}, {collection: 'posts'});
+}, {collection: 'posts'}); //Name of this schema
 
 // Methods of postShema
 postSchema.virtual('tags.get').get(function(){
