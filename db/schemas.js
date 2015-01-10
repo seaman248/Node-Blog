@@ -26,6 +26,10 @@ postSchema.virtual('tags.set').set(function(tagsStr){
 	if(tagsStr)
 		this.tags = tagsStr.split(', ');
 });
+
+postSchema.methods.getPosts = function(cb){
+	this.model('Post').find(cb);
+}
 // Export
 module.exports.postSchema = postSchema;
 
