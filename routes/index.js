@@ -5,13 +5,15 @@ var async = require('async');
 
 
 
-async.waterfall([
+async.parallel([
 	function getPosts (cb){
 		db.Post.find(function(err, posts){
 			if(err) console.log(err);
 			cb(null, posts);
 		})
-	}], function mainRouter (err, postList){
+	}], function mainRouter (err, results){
+		var postList = results[1];
+		console.log(postList);
 		router.get('/', function(req, res, next) {
 		  res.render('index', {
 		  	jumbotron: true,
