@@ -12,8 +12,7 @@ async.parallel([
 			cb(null, posts);
 		})
 	}], function mainRouter (err, results){
-		var postList = results[1];
-		console.log(postList);
+		var postList = results[0];
 		router.get('/', function(req, res, next) {
 		  res.render('index', {
 		  	jumbotron: true,
@@ -23,3 +22,5 @@ async.parallel([
 	})
 
 module.exports = router;
+
+
