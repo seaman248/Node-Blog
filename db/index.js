@@ -4,4 +4,4 @@ var conf = require('../conf');
 
 mongoose.connect(conf.get('db_connect'));
 
-module.exports.dbmodels = models;
+module.exports.postSchema = models.postSchema;
