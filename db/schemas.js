@@ -12,6 +12,7 @@ var postSchema = new Schema({
 	description: String,
 	author: {name: String, login: String},
 	mdLink: String, // Link to .md file of this post
+	href: String, // Url that lead to post
 	date: {type: Date, default: Date.now},
 	tags: [String]
 }, {collection: 'posts'}); //Name of this schema
