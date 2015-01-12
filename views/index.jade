@@ -1,12 +1,13 @@
 extends layout
 
 block content
-	each post in postList
-		.well
-			h2
-				a(href= post.href) #{post.title}
-			p.lead #{post.description}
-			each tag in post.tags
-				span.label.label-default.label-lg #{tag}
-			h3
-				span.label.label-default #{moment(post.date).locale('ru').fromNow()}
+	.container
+		each post in postList
+			.post_prev
+				h2
+					a(href= post.href) #{post.title}
+				p.lead #{post.description}
+				each tag in post.tags
+					span.label.label-default.label-lg #{tag}
+				h3
+					span.label.label-default #{moment(post.date).locale('ru').fromNow()}
