@@ -3,9 +3,9 @@ var app = require('./app.js');
 var conf = require('./conf');
 
 // Get navigation list from database
-var navLinks = [{name:'Blog', url: '/'},
-  		{name: 'Portfolio', url: '/portfolio'},
-  		{name: 'Contacts', url: '/contacts'}];
+var navLinks = [{name:'Блог', url: '/'},
+  		{name: 'Портфолио', url: '/portfolio'},
+  		{name: 'Контакты', url: '/contacts'}];
 
 
 var locables = {

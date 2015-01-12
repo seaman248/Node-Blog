@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	coffee = require('gulp-coffee'),
-	gutil = require('gulp-util');
+	gutil = require('gulp-util'),
+	minifyCSS = require('gulp-minify-css');
 
 gulp.task('coffee', function () {
     'use strict';
@@ -13,8 +14,11 @@ gulp.task('coffee', function () {
 gulp.task('uglify', function () {
     'use strict';
 	gulp.src('public/javascripts/**/*js')
-//		.pipe(uglify)
+		.pipe(uglify())
 		.pipe(gulp.dest('public/javascripts/'));
+	gulp.src('public/stylesheets/style.css')
+		.pipe(minifyCSS())
+		.pipe(gulp.dest('public/stylesheets'));
 });
 
 gulp.task('watch', function () {
@@ -24,4 +28,4 @@ gulp.task('watch', function () {
 
 
 // Production
-gulp.task('brackets-default', ['coffee', 'uglify', 'watch']);
+gulp.task('default', ['coffee', 'uglify', 'watch']);

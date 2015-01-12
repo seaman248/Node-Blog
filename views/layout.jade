@@ -8,25 +8,23 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src='/javascripts/index.js')
 	body
-		.container
-			nav.navbar.navbar-inverse
+		nav
+			.container
 				.navbar-header
-						button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse")
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
-						a.navbar-brand(href='/') Seaman Blog
-				.navbar-collapse.collapse.navbar-inverse-collapse
-					ul.nav.navbar-nav
+					h1
+						a(href='/') Seaman Blog
+				.navbar-body
+					ul
 						if navLinks
 							each page in navLinks
 								li
 									a(href = page.url) #{page.name}
-			if jumbotron
-				.jumbotron
-					h1 Seaman Blog
-					p Welcome to my blog!
-			.content
-				.rows
-					.col-md-10.col-md-offset-1
-						block content
+	if jumbotron
+		.jumbotron
+			.container
+				h1 Seaman Blog
+				p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum fugit officia ratione distinctio numquam minima aspernatur, quaerat! Odio, voluptate, et!
+	.content
+		.rows
+			.col-md-10.col-md-offset-1
+				block content
