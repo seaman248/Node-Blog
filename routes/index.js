@@ -4,22 +4,21 @@ var db = require('../db');
 var async = require('async');
 
 
-
-async.parallel([
-	function getPosts (cb){
-		db.Post.find(function(err, posts){
-			if(err) console.log(err);
-			cb(null, posts);
-		})
-	}], function mainRouter (err, results){
-		var postList = results[0];
-		router.get('/', function(req, res, next) {
-		  res.render('index', {
-		  	jumbotron: true,
-		  	postList: postList
-		  });
-		});
-	})
+router.get('/', function(req, res, next) {
+	async.parallel([
+		function getPosts (cb){
+			db.Post.find(function(err, posts){
+				if(err) console.log(err);
+				cb(null, posts);
+			})
+		}], function mainRouter (err, results){
+				var postList = results[0];
+				res.render('index', {
+				jumbotron: true,
+				postList: postList
+			});
+	});
+});
 
 module.exports = router;
 

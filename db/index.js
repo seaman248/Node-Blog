@@ -46,7 +46,7 @@ module.exports.Portfolio = Portfolio;
 */
 
 // var portfolio = new Portfolio({
-// 	name: 'Site3',
+// 	name: 'Site20',
 // 	description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, dolor!',
 // 	href: '#',
 // 	date: Date.now()
@@ -56,3 +56,20 @@ module.exports.Portfolio = Portfolio;
 // 	if(err) console.log(err);
 // 	console.log(portfolio.name + ' is saved in database!');
 // });
+
+
+// for (var i = 0; i<100 ; i+=1){
+// 	(function(e){
+// 		var portfolio = new Portfolio({
+// 			name: 'Site' + e,
+// 			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, dolor!',
+// 			href: '#',
+// 			date: Date.now()
+// 		});
+
+// 		portfolio.save(function(err, portfolio){
+// 			if(err) console.log(err);
+// 			console.log(portfolio.name + ' is saved in database!');
+// 		});
+// 	})(i)
+// }

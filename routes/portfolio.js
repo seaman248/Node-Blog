@@ -3,19 +3,34 @@ var express = require('express'),
 	async = require('async'),
 	db = require('../db');
 
-async.parallel([
-	function(cb){
-		db.Portfolio.find(function(err, portfolios){
-			if(err) cb(err);
-			cb(null, portfolios);
-		});
-	}],
-	function(err, result){
-		if(err) console.log(err);
-		router.get('/', function(req, res, next){
-			res.render('portfolio', {
-				projects: result[0]
+// async.parallel([
+// 	function(cb){
+// 		db.Portfolio.find(function(err, portfolios){
+// 			if(err) cb(err);
+// 			cb(null, portfolios);
+// 		});
+// 	}],
+// 	function(err, result){
+// 		if(err) console.log(err);
+// 		router.get('/', function(req, res, next){
+// 			res.render('portfolio', {
+// 				projects: result[0]
+// 			});
+// 	});
+// });
+
+router.get('/', function(req, res, next){
+	async.parallel([
+		function(cb){
+			db.Portfolio.find(function(err, portfolios){
+				if(err) console.log(err);
+				cb(null, portfolios);
 			});
+		}
+		], function(err, result){
+		res.render('portfolio', {
+			projects: result[0]
+		});
 	});
 });
 
