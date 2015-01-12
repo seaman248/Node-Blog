@@ -14,7 +14,7 @@ var Portfolio = models.Portfolio;
 module.exports.Portfolio = Portfolio;
 
 /*
-	Example of insert operation with post
+	Example of post insert operation
 */
 
 // var post = new Post({
@@ -33,10 +33,26 @@ module.exports.Portfolio = Portfolio;
 // })
 
 /*
-	Example of select operation of posts
+	Example of posts select
 */
 
 // Post.find(function(err, posts){
 // 	if(err) console.log(err);
 // 	console.log(posts);
 // })
+
+/**
+*	Example of portfolio insert operation
+*/
+
+// var portfolio = new Portfolio({
+// 	name: 'Site3',
+// 	description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, dolor!',
+// 	href: '#',
+// 	date: Date.now()
+// });
+
+// portfolio.save(function(err, portfolio){
+// 	if(err) console.log(err);
+// 	console.log(portfolio.name + ' is saved in database!');
+// });
