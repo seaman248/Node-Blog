@@ -10,7 +10,7 @@ $NAV_CONTAINER: 100%;
 $NAV_HEIGHT: 50px;
 
 
-$BODY_CONTAINER: 80%;
+$BODY_CONTAINER: 70%;
 
 
 body {
@@ -70,7 +70,7 @@ body {
 				display: block;
 				box-sizing: border-box;
 				height: $NAV_HEIGHT;
-				padding: ($NAV_HEIGHT - 13px) / 2 7px;
+				padding: ($NAV_HEIGHT - 13px) / 2 5px;
 			}
 			ul{
 				list-style-type: none;
@@ -117,5 +117,37 @@ body {
 			@include container($BODY_CONTAINER);
 		}
 		margin-top: 20px;
+		.post_prev{
+			margin-bottom: 10px;
+			border-bottom: 1px solid #e5e5e5;
+			h2{
+				font-size: 33px;
+				font-weight: bold;
+				margin: 10px 0;
+				a:hover{
+					color: #4183c4;
+				}
+			}
+			p{
+				font-size: 20px;
+				line-height: 130%;
+			}
+			.tags{
+				margin: 10px 0;
+				font-style: italic;
+				color: #757575;
+				li{
+					display: inline-block;
+					margin-right: 8px;
+					font-size: 13px;
+				}
+			}
+			.post_date{
+				width: 100%;
+				font-size: 12px;
+				color: #bbb;
+				padding-bottom: 10px;
+			}
+		}
 	}
 }

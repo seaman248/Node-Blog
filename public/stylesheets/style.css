@@ -115,7 +115,7 @@ body nav .navbar-body a {
   display: block;
   box-sizing: border-box;
   height: 50px;
-  padding: 18.5px 7px;
+  padding: 18.5px 5px;
 }
 body nav .navbar-body ul {
   list-style-type: none;
@@ -133,7 +133,7 @@ body .jumbotron {
   background: repeat url(/images/stardust.png);
 }
 body .jumbotron .container {
-  max-width: 80%;
+  max-width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -155,7 +155,7 @@ body .content {
   margin-top: 20px;
 }
 body .content .container {
-  max-width: 80%;
+  max-width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -163,4 +163,36 @@ body .content .container:after {
   content: " ";
   display: block;
   clear: both;
+}
+body .content .post_prev {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+body .content .post_prev h2 {
+  font-size: 33px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+body .content .post_prev h2 a:hover {
+  color: #4183c4;
+}
+body .content .post_prev p {
+  font-size: 20px;
+  line-height: 130%;
+}
+body .content .post_prev .tags {
+  margin: 10px 0;
+  font-style: italic;
+  color: #757575;
+}
+body .content .post_prev .tags li {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 13px;
+}
+body .content .post_prev .post_date {
+  width: 100%;
+  font-size: 12px;
+  color: #bbb;
+  padding-bottom: 10px;
 }

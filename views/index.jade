@@ -7,7 +7,9 @@ block content
 				h2
 					a(href= post.href) #{post.title}
 				p.lead #{post.description}
-				each tag in post.tags
-					span.tag #{tag}
-				span.label.label-default 
-					|#{moment(post.date).locale('ru').fromNow()}
+				ul.tags
+					|Тэги: 
+					each tag in post.tags
+						li #{tag}
+				.post_date
+					span #{moment(post.date).locale('ru').fromNow()}
