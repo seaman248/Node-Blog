@@ -16,13 +16,22 @@ var getPost = function(link){
 
 
 router.get('/:postId', function(req, res, next){
-	res.render('post', {
-  	post: {
-  		// Убрать req.params
-  		header: postHeader+req.params.postId,
-  		mdContent: md(getPost(mdlink))
-  	}
-  });
+	if(req.params.postId){
+		res.render('post', {
+			post: {
+				// Убрать req.params
+				header: postHeader+req.params.postId,
+				mdContent: md(getPost(mdlink))
+			}
+		});
+	} else{
+		next();
+	}
+})
+
+// If request haven't postId params
+router.get('/', function(req, res, next){
+	res.redirect('/');
 })
 
 module.exports = router;

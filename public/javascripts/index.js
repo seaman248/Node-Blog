@@ -1,5 +1,5 @@
 window.onload = function() {
-  $('code').each(function(i, block) {
-    hljs.highlightBlock(block);
+  return $('code').each(function(i, block) {
+    return hljs.highlightBlock(block);
   });
 };
