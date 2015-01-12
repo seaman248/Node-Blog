@@ -1,6 +1,7 @@
 extends layout
 
 block content
-	h1=post.header
-	section.lead
-		!= post.mdContent
+	.container
+		h1=post.header
+		.mdContent
+			!= post.mdContent

@@ -3,12 +3,14 @@
 @import "compass/utilities";
 @import "susy";
 
+
+
 // 
 // Globals
 // 
 $NAV_CONTAINER: 100%;
 $NAV_HEIGHT: 50px;
-
+$NAV_ITEM_PADDING: 0.8em;
 
 $BODY_CONTAINER: 70%;
 
@@ -70,7 +72,7 @@ body {
 				display: block;
 				box-sizing: border-box;
 				height: $NAV_HEIGHT;
-				padding: ($NAV_HEIGHT - 13px) / 2 5px;
+				padding: ($NAV_HEIGHT - 13px) / 2 $NAV_ITEM_PADDING;
 			}
 			ul{
 				list-style-type: none;
@@ -94,8 +96,8 @@ body {
 		width: 100%;
 		background-color: #333;
 		box-sizing: border-box;
-		padding-top: 5%;
-		padding-bottom: 5%;
+		padding-top: 2%;
+		padding-bottom: 2%;
 		background: repeat url(/images/stardust.png);
 		h1{
 			font-size: 42px;
@@ -106,10 +108,17 @@ body {
 			font-size: 20px;
 			line-height: 130%;
 		}
+		.social_icons{
+			margin-top: 20px;
+			li{
+				display: inline-block;
+				margin-right: 25px;
+			}
+		}
 	}
 	
 	// ***************
-	// Postlist
+	// Postlist and portfolioList
 	// ***************
 
 	.content{
@@ -117,21 +126,33 @@ body {
 			@include container($BODY_CONTAINER);
 		}
 		margin-top: 20px;
+		h1{
+			font-size: 48px;
+			font-weight: bold;
+			margin: 10px 0;
+		}
+		h2{
+			font-size: 33px;
+			font-weight: bold;
+			margin: 10px 0;
+			a:hover{
+				color: #4183c4;
+			}
+		}
+		p{
+			font-size: 22px;
+			line-height: 130%;
+		}
+		.post_date {
+			width: 100%;
+			font-size: 12px;
+			color: #bbb;
+			padding-bottom: 10px;
+			margin-top: 10px;
+		}
 		.post_prev{
 			margin-bottom: 10px;
 			border-bottom: 1px solid #e5e5e5;
-			h2{
-				font-size: 33px;
-				font-weight: bold;
-				margin: 10px 0;
-				a:hover{
-					color: #4183c4;
-				}
-			}
-			p{
-				font-size: 20px;
-				line-height: 130%;
-			}
 			.tags{
 				margin: 10px 0;
 				font-style: italic;
@@ -142,12 +163,37 @@ body {
 					font-size: 13px;
 				}
 			}
-			.post_date{
-				width: 100%;
-				font-size: 12px;
-				color: #bbb;
-				padding-bottom: 10px;
-			}
 		}
 	}
+
+	// ******	
+	// MD content
+	// ******
+	.mdContent{
+		h1 {font-size: 34px;}
+		h2 {font-size: 30px;}
+		h3 {font-size: 27px;}
+		h4 {font-size: 25px;}
+		h5 {font-size: 23px;}
+		h6 {font-size: 20px;}
+		p{
+			font-size: 19px
+		}
+		em{
+			font-style: italic;
+		}
+		strong{
+			font-weight: bold;
+		}
+		code{
+			font-family: Consolas, Courier New, monospace;
+			padding: 20px;
+			display: block;
+			margin: 20px 0;
+			box-sizing: border-box;
+			background-color: #f5f5f5;
+			border-radius: 20px;
+		}
+	}
+
 }

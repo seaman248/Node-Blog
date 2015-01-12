@@ -1,10 +1,11 @@
 extends layout
 
 block content
-	each item in projects
-		.well
-			h1 
-				a(href=item.href)=item.name
-			p.lead #{item.description}
-			h4
-				span.label.label-default Добавлено #{moment(item.date).locale('ru').fromNow()}
+	.container
+		each item in projects
+			.portfolio_item
+				h2
+					a(href=item.href)=item.name
+				p #{item.description}
+				.post_date
+					span Добавлено #{moment(item.date).locale('ru').fromNow()}
