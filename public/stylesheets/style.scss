@@ -1,6 +1,7 @@
 @import "compass/css3";
-
+@import 'susy';
 
 body {
 	margin-top: 40px;
+    @include container(80%);
 }

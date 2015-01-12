@@ -13,7 +13,7 @@ gulp.task('coffee', function () {
 gulp.task('uglify', function () {
     'use strict';
 	gulp.src('public/javascripts/**/*js')
-		.pipe(uglify)
+//		.pipe(uglify)
 		.pipe(gulp.dest('public/javascripts/'));
 });
 
@@ -24,4 +24,4 @@ gulp.task('watch', function () {
 
 
 // Production
-gulp.task('default', ['coffee', 'uglify']);
+gulp.task('brackets-default', ['coffee', 'uglify', 'watch']);
