@@ -6,4 +6,5 @@ block content
 			h1 
 				a(href=item.href)=item.name
 			p.lead #{item.description}
-			p.label.label-success #{item.date}
+			h4
+				span.label.label-success #{item.date.getUTCMonth()+1} / #{item.date.getUTCFullYear()}
