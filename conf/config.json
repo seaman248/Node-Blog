@@ -1,0 +1,9 @@
+{
+	"port": 3000,
+	"host": "localhost",
+	"locals": {
+		"title": "Seaman Blog",
+		"description": "Welcome to my blog!"
+	},
+	"db_connect": "mongodb://localhost/seaman_blog"
+}
