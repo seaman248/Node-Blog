@@ -53,3 +53,5 @@ var portfolioSchema = new Schema({
 	href: String, // Link to portfolio project
 	date: {type: Date, default: Date.now()}
 }, {collection: 'portfolios'}); 
+
+module.exports.portfolioSchema = portfolioSchema;

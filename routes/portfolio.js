@@ -1,12 +1,23 @@
 var express = require('express'),
-	router = express.Router();
+	router = express.Router(),
+	async = require('async'),
+	db = require('../db');
 
-
-router.get('/', function(req, res, next){
-	res.render('portfolio', {
-		projects: [{name: 'alala', href: '#', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quidem doloremque incidunt vitae! Perferendis sapiente mollitia numquam nesciunt vitae maxime eos blanditiis, iste repellat, omnis aliquam, earum. Voluptatibus, earum sunt.'}
-		]
+async.parallel([
+	function(cb){
+		db.Portfolio.find(function(err, portfolios){
+			if(err) cb(err);
+			cb(null, portfolios);
+		});
+	}],
+	function(err, result){
+		if(err) console.log(err);
+		router.get('/', function(req, res, next){
+			res.render('portfolio', {
+				projects: result[0]
+			});
 	});
-})
+});
+
 
 module.exports = router;

@@ -10,6 +10,9 @@ db.on('error', console.error.bind(console, 'connection error:'));
 var Post = models.Post;
 module.exports.Post = Post;
 
+var Portfolio = models.Portfolio;
+module.exports.Portfolio = Portfolio;
+
 /*
 	Example of insert operation with post
 */
