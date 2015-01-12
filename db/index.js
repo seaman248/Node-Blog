@@ -57,6 +57,9 @@ module.exports.Portfolio = Portfolio;
 // 	console.log(portfolio.name + ' is saved in database!');
 // });
 
+/**
+*	Multiple insert
+*/
 
 // for (var i = 0; i<100 ; i+=1){
 // 	(function(e){
