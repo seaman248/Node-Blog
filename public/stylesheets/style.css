@@ -151,3 +151,16 @@ body .jumbotron p {
   font-size: 20px;
   line-height: 130%;
 }
+body .content {
+  margin-top: 20px;
+}
+body .content .container {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+body .content .container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}

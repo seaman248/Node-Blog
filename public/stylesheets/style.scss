@@ -81,9 +81,9 @@ body {
 		}
 	}
 
-	// 
+	// ***************
 	// Jumbotron
-	// 
+	// ***************
 
 
 	.jumbotron{
@@ -107,5 +107,15 @@ body {
 			line-height: 130%;
 		}
 	}
+	
+	// ***************
+	// Postlist
+	// ***************
 
+	.content{
+		.container{
+			@include container($BODY_CONTAINER);
+		}
+		margin-top: 20px;
+	}
 }
