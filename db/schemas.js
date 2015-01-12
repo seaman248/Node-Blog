@@ -50,6 +50,6 @@ db.posts.save({
 var portfolioSchema = new Schema({
 	name: String,
 	description: String,
-	href: String,
+	href: String, // Link to portfolio project
 	date: {type: Date, default: Date.now()}
-})
+}, {collection: 'portfolios'}); 
