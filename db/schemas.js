@@ -13,7 +13,7 @@ var postSchema = new Schema({
 	author: {name: String, login: String},
 	mdLink: String, // Link to .md file of this post
 	href: String, // Url that lead to post
-	date: {type: Date, default: Date.now},
+	date: {type: Date, default: Date.now()},
 	tags: [String]
 }, {collection: 'posts'}); //Name of this schema
 
@@ -45,3 +45,11 @@ db.posts.save({
 	date: Date.now(),
 	tags: ['tag1', 'tag2', 'tag3']});
 */
+
+
+var portfolioSchema = new Schema({
+	name: String,
+	description: String,
+	href: String,
+	date: {type: Date, default: Date.now()}
+})
