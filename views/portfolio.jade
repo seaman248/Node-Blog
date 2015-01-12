@@ -7,4 +7,4 @@ block content
 				a(href=item.href)=item.name
 			p.lead #{item.description}
 			h4
-				span.label.label-success #{item.date.getUTCMonth()+1} / #{item.date.getUTCFullYear()}
+				span.label.label-success Добавлено #{moment(item.date).locale('ru').fromNow()}

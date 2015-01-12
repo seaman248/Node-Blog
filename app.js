@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var locables = require('./locables');
+// Work with date
+var moment = require('moment');
 // Configuration requires
 var conf = require('./conf');
 
@@ -69,5 +71,5 @@ app.use(function(err, req, res, next) {
 
 app.locals.title = locables.title;
 app.locals.navLinks = locables.navLinks;
-
+app.locals.moment = moment;
 module.exports = app;
