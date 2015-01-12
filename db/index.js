@@ -32,6 +32,30 @@ module.exports.Portfolio = Portfolio;
 // 	console.log(post.title);
 // })
 
+/**
+*	Multiple insert of posts
+*/
+
+// for (var i = 0; i<100; i+=1){
+// 	(function(e){
+// 		var post = new Post({
+// 			title: 'This is a litle post №' + e,
+// 			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa iure qui, et laborum perferendis quas, temporibus commodi ducimus a quos.',
+// 			autor: 'Lorem ipsum',
+// 			mdLink: 'README.MD',
+// 			href: '/blog/'+e,
+// 			date: Date.now(),
+// 			tags: ['Псевдогеография', 'Религиобиология', 'Херометрия']
+// 		});
+
+// 		post.save(function(err, post){
+// 			if(err) console.log(err);
+// 			console.log(post.title);
+// 		})
+// 	})(i)
+// }
+
+
 /*
 	Example of posts select
 */
