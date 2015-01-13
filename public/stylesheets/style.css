@@ -260,6 +260,9 @@ body .paginate a {
   margin-top: 15px;
   border-radius: 7px;
 }
+body .paginate a:hover {
+  color: #4183c4;
+}
 body .paginate .paginate-disabled {
   cursor: default;
   background-color: #9E9E9E;

@@ -14,6 +14,7 @@ $NAV_ITEM_PADDING: 0.8em;
 
 $BODY_CONTAINER: 70%;
 
+$HOVER_BLUE: #4183c4;
 
 body {
 	h1, 
@@ -135,7 +136,7 @@ body {
 			font-weight: bold;
 			margin: 10px 0;
 			a:hover{
-				color: #4183c4;
+				color: $HOVER_BLUE;
 			}
 		}
 		p{
@@ -207,6 +208,9 @@ body {
 			margin-left: 7px;
 			margin-top: 15px;
 			border-radius: 7px;
+		}
+		a:hover{
+			color: $HOVER_BLUE;
 		}
 		.paginate-disabled{
 			cursor: default;
