@@ -13,3 +13,13 @@ block content
 						li #{tag}
 				.post_date
 					span Добавлено #{moment(post.date).locale('ru').fromNow()}
+		//- Pagination
+		ul.paginate
+			- var i = -10;
+			while i < countPosts
+				- i+=10;
+					li
+						if skip === i
+							a(href="?n=" + i).paginate-disabled #{i/10}
+						else 
+							a(href="?n=" + i) #{i/10}
