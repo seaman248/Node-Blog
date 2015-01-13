@@ -16,7 +16,7 @@ block content
 		//- Pagination
 		ul.paginate
 			- var i = -10;
-			while i < countPosts
+			while i < countPosts - 10
 				- i+=10;
 					li
 						if skip === i
