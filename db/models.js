@@ -3,3 +3,4 @@ var schemas = require('./schemas');
 
 module.exports.Post = mongoose.model('Post', schemas.postSchema);
 module.exports.Portfolio = mongoose.model('Portfolio', schemas.portfolioSchema);
+module.exports.User = mongoose.model('User', schemas.userSchema);

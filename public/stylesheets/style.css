@@ -269,3 +269,8 @@ body .paginate .paginate-disabled {
   pointer-events: none;
   color: white;
 }
+body form.auth_form {
+  width: 49.15254%;
+  float: left;
+  margin-right: 1.69492%;
+}

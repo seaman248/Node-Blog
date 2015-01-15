@@ -13,6 +13,27 @@ module.exports.Post = Post;
 var Portfolio = models.Portfolio;
 module.exports.Portfolio = Portfolio;
 
+var User = models.User;
+module.exports.User = User;
+
+
+/*
+	Example of user insert operation
+*/
+// var user = new User({
+// 	role: 'admin',
+// 	username: 'seaman',
+// 	pass: '1234',
+// });
+
+// user.save(function(err, user){
+// 	console.log(user.pass);
+// })
+
+
+
+
+
 /*
 	Example of post insert operation
 */

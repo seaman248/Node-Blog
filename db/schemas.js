@@ -47,6 +47,10 @@ db.posts.save({
 */
 
 
+/**
+*	Schema of portfolio data
+*/
+
 var portfolioSchema = new Schema({
 	name: String,
 	description: String,
@@ -67,12 +71,30 @@ var userSchema = new Schema({
 	hashedPass: {type: String, required: true},
 	salt: {type: String, required: true},
 	date: {type: Date, default: Date.now()}
-});
+}, {collection: 'users'});
 
 /**
 *	User Schema methods
 */
 
 userSchema.methods.encryptPass = function(pass){
-	return crypto.createHmac('sha1', this.Salt).update(pass).digest('hex');
+	return crypto.createHmac('sha1', this.salt).update(pass).digest('hex');
 }
+
+userSchema.virtual('pass')
+	.set(function(pass){
+		this._plainPass = pass;
+		this.salt = crypto.randomBytes(32).toString('base64');
+		this.hashedPass = this.encryptPass(pass);
+	})
+	.get(function(){
+		return this._plainPass;
+	});
+
+userSchema.method.checkPassword = function(pass){
+	return this.encryptPass(pass) === this.hashedPass;
+}
+
+// Export User Schema
+
+module.exports.userSchema = userSchema;
