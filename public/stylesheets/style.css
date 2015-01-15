@@ -158,9 +158,6 @@ body .jumbotron .social_icons li {
   display: inline-block;
   margin-right: 25px;
 }
-body .content {
-  margin-top: 20px;
-}
 body .content .container {
   max-width: 70%;
   margin-left: auto;
@@ -270,7 +267,26 @@ body .paginate .paginate-disabled {
   color: white;
 }
 body form.auth_form {
-  width: 49.15254%;
-  float: left;
-  margin-right: 1.69492%;
+  width: 60%;
+  margin: 30px auto;
+  text-align: center;
+}
+body form.auth_form input {
+  width: 100%;
+  padding: 6px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #EBEBEB;
+  outline: none;
+  border-radius: 8px;
+}
+body form.auth_form button {
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid #EBEBEB;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
 }

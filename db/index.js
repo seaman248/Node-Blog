@@ -30,7 +30,9 @@ module.exports.User = User;
 // 	console.log(user.pass);
 // })
 
-
+// User.findOne({username: 'Seaman'}, function(err, user){
+// 	console.log(user.checkPass('1234'));
+// })
 
 
 

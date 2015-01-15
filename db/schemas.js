@@ -91,7 +91,7 @@ userSchema.virtual('pass')
 		return this._plainPass;
 	});
 
-userSchema.method.checkPassword = function(pass){
+userSchema.methods.checkPass = function(pass){
 	return this.encryptPass(pass) === this.hashedPass;
 }
 

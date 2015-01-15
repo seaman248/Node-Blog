@@ -134,7 +134,6 @@ body {
 		.container{
 			@include container($BODY_CONTAINER);
 		}
-		margin-top: 20px;
 		h1{
 			font-size: 48px;
 			font-weight: bold;
@@ -233,9 +232,27 @@ body {
 	// Auth form
 	// 
 	form.auth_form{
-		@include span(6 at 3 of 12);
+		width: 60%;
+		margin: 30px auto;
+		text-align: center;
 		input{
-
+			width: 100%;
+			padding: 6px;
+			font-size: 20px;
+			margin-bottom: 10px;
+			border: 1px solid #EBEBEB;
+			outline: none;
+			border-radius: 8px;
+		}
+		button{
+			width: 30%;
+			background-color: #fff;
+			border: 1px solid #EBEBEB;
+			font-size: 15px;
+			font-weight: bold;
+			padding: 10px;
+			cursor: pointer;
+			border-radius: 8px;
 		}
 	}
 }
