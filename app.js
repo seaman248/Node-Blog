@@ -69,7 +69,11 @@ app.use(function(err, req, res, next) {
     });
 });
 
+
+// Local variables
 app.locals.title = locables.title;
 app.locals.navLinks = locables.navLinks;
 app.locals.moment = moment;
+
+// Export
 module.exports = app;
