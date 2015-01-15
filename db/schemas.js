@@ -1,5 +1,5 @@
 var  mongoose = require('mongoose');
-
+var crypto = require('crypto');
 var Schema = mongoose.Schema;
 
 
@@ -55,3 +55,24 @@ var portfolioSchema = new Schema({
 }, {collection: 'portfolios'}); 
 
 module.exports.portfolioSchema = portfolioSchema;
+
+/**
+*	User Schema
+*/
+
+
+var userSchema = new Schema({
+	role: {type: String, require: true},
+	username: {type: String, unique: true, required: true},
+	hashedPass: {type: String, required: true},
+	salt: {type: String, required: true},
+	date: {type: Date, default: Date.now()}
+});
+
+/**
+*	User Schema methods
+*/
+
+userSchema.methods.encryptPass = function(pass){
+	return crypto.createHmac('sha1', this.Salt).update(pass).digest('hex');
+}
