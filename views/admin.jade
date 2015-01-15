@@ -1,5 +1,32 @@
-extends layout
-
-block content
-
-
+doctype html5
+html(lang="ru")
+head
+	meta(charset="UTF-8")
+	title #{title}
+	link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+body
+	nav.navbar.navbar-default
+		.container
+			.navbar-header
+				button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#collapse-1")
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href="/") Seaman Admin
+			ul.nav.navbar-nav.navbar-right
+				li
+					a(href="/admin/auth")
+						span.glyphicon.glyphicon-ban-circle
+	rows
+		.col-md-3
+			ul.nav.nav-pills.nav-stacked
+				li(role="presentation")
+					a(href="/admin?inset=cpu") CPU params
+				li(role="presentation")
+					a(href="/admin?inset=analitics") Analitycs
+		.col-md-9
+			h2 CPU Params
+			.panel.panel-info
+				.panel-heading CORES
+				.panel-body
+	script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")

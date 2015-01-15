@@ -11,10 +11,7 @@ html
 			link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css")
 		if jumbotron
 			link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
-		if admin
-			link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
-		if !admin
-			link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src='/javascripts/index.js')
 	body
 		nav
@@ -27,24 +24,24 @@ html
 						each page in navLinks
 							li
 								a(href = page.url) #{page.name}
-	if jumbotron
-		.jumbotron
-			.container
-				h1 Seaman Blog
-				p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-					|Ipsum fugit officia ratione distinctio numquam minima aspernatur, 
-					|quaerat! Odio, voluptate, et!  Lorem ipsum dolor sit amet, consectetur 
-					|adipisicing elit. Quae eligendi reiciendis incidunt, optio magnam laboriosam 
-					|officia reprehenderit corrupti tempore! Officiis.
-				ul.social_icons
-					li
-						a(href='#')
-							i.fa.fa-github.fa-3x.fa-inverse
-					li
-						a(href='#')
-							i.fa.fa-skype.fa-3x.fa-inverse
-					li
-						a(href='#')
-							i.fa.fa-twitter.fa-3x.fa-inverse
+		if jumbotron
+			.jumbotron
+				.container
+					h1 Seaman Blog
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+						|Ipsum fugit officia ratione distinctio numquam minima aspernatur, 
+						|quaerat! Odio, voluptate, et!  Lorem ipsum dolor sit amet, consectetur 
+						|adipisicing elit. Quae eligendi reiciendis incidunt, optio magnam laboriosam 
+						|officia reprehenderit corrupti tempore! Officiis.
+					ul.social_icons
+						li
+							a(href='#')
+								i.fa.fa-github.fa-3x.fa-inverse
+						li
+							a(href='#')
+								i.fa.fa-skype.fa-3x.fa-inverse
+						li
+							a(href='#')
+								i.fa.fa-twitter.fa-3x.fa-inverse
 	.content
 		block content

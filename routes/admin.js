@@ -2,25 +2,27 @@ var express = require('express'),
 	router = express.Router(),
 	User = require('../db').User,
 	async = require('async');
-
 // console.log(User.checkPass('23'));
 
 router.get('/', function(req, res, next){
 	var userCookie = req.cookies.admin;
+	if (!userCookie) {
+		res.redirect('/admin/auth');
+	}
 	async.parallel([
 		function(cb){
 			User.findOne({_id: userCookie}, function(err, user){
-				if(err || !user) cb(err || null);
+				if(err) cb(null);
+				if(!user){
+					cb(null);
+					res.redirect('/admin/auth');
+				}
 				cb(null, user);
 			});
 		}], function(err, resultArr){
-			if(err) next(err);
-			if(resultArr[0]){
-				res.render('admin', {
-					admin: true,
-				});
-			}
-			else res.redirect('/admin/auth');
+			res.render('admin', {
+				admin: true,
+			});
 		});
 });
 
