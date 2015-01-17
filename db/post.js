@@ -15,4 +15,17 @@ postSchema.methods.getPosts = function(cb){
 	this.model('Post').find(cb);
 }
 
+postSchema.methods.getPostList = function(dateSort, limit, skip, cb){
+	var Post = this;
+	db.Post
+		.find()
+		.sort({date: dateSort})
+		.skip(skip)
+		.limit(limit)
+		.exec(function(err, posts){
+			if(err) cb(err);
+			cb(null, posts);
+		});
+}
+
 module.exports = mongoose.model('Post', postSchema);
