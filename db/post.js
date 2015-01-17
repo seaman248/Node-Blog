@@ -11,19 +11,14 @@ var postSchema = new Schema({
 	tags: [String]
 }, {collection: 'posts'});
 
-postSchema.methods.getPosts = function(cb){
-	this.model('Post').find(cb);
-}
-
-postSchema.methods.getPostList = function(dateSort, limit, skip, cb){
-	var Post = this;
-	db.Post
+postSchema.statics.getPostList = function(dateSort, limit, skip, cb){
+	this
 		.find()
 		.sort({date: dateSort})
 		.skip(skip)
 		.limit(limit)
 		.exec(function(err, posts){
-			if(err) cb(err);
+			if(err) cb(err, null);
 			cb(null, posts);
 		});
 }
