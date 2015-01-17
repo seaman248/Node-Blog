@@ -10,10 +10,10 @@ db.on('error', console.error.bind(console, 'connection error:'));
 var Post = models.Post;
 module.exports.Post = Post;
 
-var Portfolio = models.Portfolio;
+var Portfolio = require('./portfolio.js');
 module.exports.Portfolio = Portfolio;
 
-var User = models.User;
+var User = require('./user.js');
 module.exports.User = User;
 
 

@@ -9,17 +9,7 @@ router.get('/', function(req, res, next){
 	if (!userCookie) {
 		res.redirect('/admin/auth');
 	}
-	async.parallel([
-		function(cb){
-			User.findOne({_id: userCookie}, function(err, user){
-				if(err) cb(null);
-				if(!user){
-					cb(null);
-					res.redirect('/admin/auth');
-				}
-				cb(null, user);
-			});
-		}], function(err, resultArr){
+	async.parallel([], function(err, resultArr){
 			res.render('admin', {
 				admin: true,
 			});
