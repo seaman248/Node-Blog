@@ -6,25 +6,35 @@ var async = require('async');
 
 router.get('/', function(req, res, next) {
 	var skip = parseInt(req.query.n) || 0;
+
+
 	async.parallel([
-		function(cb){
+		function getPostList (cb){
 			db.Post.getPostList(1, 10, skip, function(err, posts){
-						if (err) cb(err)
-						cb(null, posts)
+				if (err) cb(err)
+				cb(null, posts)
 			});
-		},function getNumberOfPost (cb){
-			db.Post.find().count(function(err, num){
+		},function countPost (cb){
+			db.Post.countPost(function(err, num){
+				if(err) cb(err);
 				cb(null, num);
 			})
 		}], function mainRouter (err, results){
 				var postList = results[0];
+				var countPosts = results[1];
+
+
 				res.render('index', {
-				jumbotron: true,
-				postList: postList,
-				countPosts: results[1],
-				skip: skip
-			});
+					jumbotron: true,
+					postList: postList,
+					countPosts: countPosts,
+					skip: skip
+				});
+
+
 	});
+
+
 });
 
 module.exports = router;

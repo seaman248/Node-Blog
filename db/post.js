@@ -12,8 +12,7 @@ var postSchema = new Schema({
 }, {collection: 'posts'});
 
 postSchema.statics.getPostList = function(dateSort, limit, skip, cb){
-	this
-		.find()
+	this.find()
 		.sort({date: dateSort})
 		.skip(skip)
 		.limit(limit)
@@ -21,6 +20,13 @@ postSchema.statics.getPostList = function(dateSort, limit, skip, cb){
 			if(err) cb(err, null);
 			cb(null, posts);
 		});
+}
+
+postSchema.statics.countPost = function(cb){
+	this.find().count(function(err, num){
+		if(err) cb(err);
+		cb(null, num);
+	})
 }
 
 module.exports = mongoose.model('Post', postSchema);
