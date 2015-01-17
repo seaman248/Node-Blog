@@ -1,5 +1,4 @@
 var  mongoose = require('mongoose');
-var models = require('./models.js');
 var conf = require('../conf');
 
 mongoose.connect(conf.get('db_connect'));
@@ -7,7 +6,7 @@ mongoose.connect(conf.get('db_connect'));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
-var Post = models.Post;
+var Post = require('./post.js');
 module.exports.Post = Post;
 
 var Portfolio = require('./portfolio.js');
